@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import Navbar from "./components/layout/Navbar";
-import UserItem from "./components/Users/UserItem";
+import Users from "./components/Users/Users";
 import "./App.css";
 
 class App extends Component {
-  constructor() {}
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <Navbar />
-        <UserItem />
+        <div className="containerw">
+          <Users />
+        </div>
       </div>
     );
   }
