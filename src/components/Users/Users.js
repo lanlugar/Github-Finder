@@ -1,16 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import UserItem from "./UserItem";
-import Proptypes from "prop-types";
+import PropTypes from "prop-types";
+import Spinner from "../layout/Spinner";
 
 const Users = (props) => {
   const { users, loading } = props;
-  return (
-    <div style={userStyle}>
-      {users.map((user) => (
-        <UserItem key={user.id} user={user} />
-      ))}
-    </div>
-  );
+  if (loading) {
+    return <Spinner />;
+  } else {
+    return (
+      <div style={userStyle}>
+        {users.map((user) => (
+          <UserItem key={user.id} user={user} />
+        ))}
+      </div>
+    );
+  }
 };
 
 const userStyle = {
@@ -23,4 +28,8 @@ Users.defaultProps = {
   users: [],
 };
 
+Users.propTypes = {
+  users: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
+};
 export default Users;
