@@ -13,6 +13,7 @@ const Search = ({ searchUsers, showClear, clearUsers, setAlert }) => {
     if (text === "") {
       setAlert("Search field cannot be empty", "light");
     } else {
+      console.log(text);
       searchUsers(text);
       setText("");
     }
