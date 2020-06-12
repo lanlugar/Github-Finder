@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import GithubContext from "../../context/github/githubContext";
 
-const Search = ({ searchUsers, showClear, clearUsers, setAlert }) => {
+const Search = ({ sshowClear, clearUsers, setAlert }) => {
   const [text, setText] = useState("");
 
   const onChange = (event) => {
@@ -45,7 +46,6 @@ const Search = ({ searchUsers, showClear, clearUsers, setAlert }) => {
 };
 
 Search.propTypes = {
-  searchUsers: PropTypes.func.isRequired,
   clearUsers: PropTypes.func.isRequired,
   setAlert: PropTypes.func.isRequired,
 };
