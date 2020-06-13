@@ -38,7 +38,7 @@ const Search = ({ setAlert }) => {
           className="btn btn-dark btn-block"
         />
       </form>
-      {useState.length > 0 && (
+      {users.length > 0 && (
         <button className="btn btn-light btn-block" onClick={clearUsers}>
           Clear
         </button>
