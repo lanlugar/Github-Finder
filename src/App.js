@@ -70,7 +70,7 @@ const App = () => {
                       showClear={users.length > 0}
                       setAlert={setAlertValue}
                     />
-                    <Users users={users} loading={loading} />
+                    <Users />
                   </Fragment>
                 )}
               ></Route>

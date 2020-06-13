@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import GithubContext from "../../context/github/githubContext";
 
-const Search = ({ sshowClear, clearUsers, setAlert }) => {
+const Search = ({ searchUsers, showClear, clearUsers, setAlert }) => {
+  const githubContext = useContext(GithubContext);
   const [text, setText] = useState("");
 
   const onChange = (event) => {
@@ -14,8 +15,7 @@ const Search = ({ sshowClear, clearUsers, setAlert }) => {
     if (text === "") {
       setAlert("Search field cannot be empty", "light");
     } else {
-      console.log(text);
-      searchUsers(text);
+      githubContext.searchUsers(text);
       setText("");
     }
   };
